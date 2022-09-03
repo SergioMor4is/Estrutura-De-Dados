@@ -16,9 +16,26 @@ primary key (id)
 insert into pessoas
 (nome, nascimento, sexo, peso, altura, nacionalidade)
 values
-('Max', '2009-05-11', 'F', '44', '1.56', 'Brasileira'),
+('Max', '2009-05-11', 'U', '44', '1.56', 'Brasileira'),
 ('Nathalia', '1999-07-28', 'F', '86', '1.72', 'Brasileira'),
 ('Renan', '2007-12-12', 'M', '52', '1.74', 'Brasileira');
 
 select * from pessoas;
+
+alter table pessoas
+add column profissao varchar(10);
+
+alter table pessoas
+drop column sexo;
+
+alter table pessoas
+add column sexo enum('M', 'F', 'U') after nascimento;
+
+
+alter table pessoas
+modify column profissao varchar(20) not null default '';
+
+
+ 
+
 
